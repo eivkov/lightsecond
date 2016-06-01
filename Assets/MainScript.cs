@@ -10,6 +10,7 @@ public abstract class Device
     public int max_hp;
     public int energy_usage;
     public bool is_firing;
+    public int d_type;
     public GameObject unityShip;
     public GameObject unityDevice;
     public abstract void Fire();
