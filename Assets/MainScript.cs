@@ -28,6 +28,16 @@ public class Weapon: Device
     }
 }
 
+public class Drive: Device{
+	public int speed;
+	public override void Fire(Vector3 position, Vector3 new_position){
+		Vector3 direction = new_position - position;
+		direction.Normalize ();
+		direction *= speed;
+		unityShip.transform.translate(direction*Time.deltaTime);
+	}
+}
+
 public class Spaceship
 {
 
