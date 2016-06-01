@@ -1,26 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Device
+public abstract class Device
 {
 
-    string label;
-    string description;
-    int hp;
-    int max_hp;
-    int energy_usage;
-    bool fire;
-    MonoBehaviour FireBehaviour;
-
-    public Device(string l, string desc, int m_hp, int en_usage, MonoBehaviour fb)
-    {
-        label = l; //присваиваем название девайса
-        description = desc; //присваеваем описание девайса
-        max_hp = m_hp;
-        hp = max_hp;
-        energy_usage = en_usage;
-        FireBehaviour = fb;//Это скрипт/ процедура/метод, кторый что-то реальное выполняет
-    }
+    public string label;
+    public string description;
+    public int hp;
+    public int max_hp;
+    public int energy_usage;
+    public bool is_firing;
+    public GameObject unityShip;
+    public GameObject unityDevice;
+    public abstract void Fire();
 
 }
 
@@ -31,9 +23,9 @@ public class Spaceship
     public Vector3 new_position;
     public Quaternion rotation;
     public Quaternion new_rotation;
-    GameObject unityShip;
+    public GameObject unityShip;
     public int hp;
-    int max_hp;
+    public int max_hp;
     public ArrayList weapons;//оружие
     public ArrayList sciDevices;//Научные девайсы(для лечения)
     public ArrayList superWeapons;//супероружие
@@ -53,6 +45,8 @@ public class Spaceship
         superWeapons = new ArrayList();
         drives = new ArrayList();
     }
+
+    public int AddDevice()
 }
 
     public class MainScript : MonoBehaviour {
