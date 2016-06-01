@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public abstract class Device
 {
@@ -15,6 +16,16 @@ public abstract class Device
     public GameObject unityDevice;
     public abstract void Fire();
 
+}
+
+public class Weapon: Device
+{
+    public int w_range;
+
+    public override void Fire()
+    {
+        throw new NotImplementedException();
+    }
 }
 
 public class Spaceship
